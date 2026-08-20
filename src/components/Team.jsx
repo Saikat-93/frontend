@@ -2,7 +2,7 @@ import Reveal from "./Reveal.jsx";
 
 const TEAM = [
   {
-    name: "Satunu Batabyal",
+    name: "Santunu Batabyal",
     role: "Senior Full-Stack Developer",
     years: "8+ yrs experience",
     bio: "Leads architecture and backend engineering across projects, from database design to deployment.",
@@ -14,9 +14,9 @@ const TEAM = [
     bio: "Builds frontend and backend features end to end, from UI implementation to API integration.",
   },
   {
-    name: "Jydeep Chakrabarty",
+    name: "Joydeep Chakraborty",
     role: "Senior Full-Stack Developer",
-    years: "8+ yrs experience",
+    years: "10+ yrs experience",
     bio: "Experienced in full-stack development, scalable application architecture, and delivering reliable digital products.",
   },
 ];

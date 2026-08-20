@@ -1,4 +1,4 @@
-const EMAIL = "hello@jsstechnologies.com";
+const EMAIL = "info@jsstechnology.in";
 
 export default function Footer() {
   return (
@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="footer-brand">
           <span className="brand-mini">
             <span className="brand-mark">JSS</span>
-            <span className="brand-full">TECHNOLOGIES</span>
+            <span className="brand-full">TECHNOLOGY</span>
           </span>
           <p>Full-stack software development for education and business.</p>
         </div>
@@ -37,7 +37,7 @@ export default function Footer() {
       </div>
 
       <div className="container footer-bottom">
-        <span className="footer-copy">© {new Date().getFullYear()} Jss Technologies. All rights reserved.</span>
+        <span className="footer-copy">© {new Date().getFullYear()} Jss Technology. All rights reserved.</span>
       </div>
 
       <style>{`
