@@ -1,9 +1,10 @@
 import { useState } from "react";
 import Reveal from "./Reveal.jsx";
+import cafeScreenshot from "../sample-website-ss/cafe and restru.png";
+import realEstateScreenshot from "../sample-website-ss/real estate.png";
+import realEstateStoreScreenshot from "../sample-website-ss/realestate.png";
 
 // Replace `href` with a link to the live site once you have it.
-// Put your screenshots in the `public/sample-website-ss/` folder and
-// reference them with a root-relative path (forward slashes, no "src\").
 const PROJECTS = [
   {
     tag: "Cafe & Restaurant",
@@ -11,7 +12,7 @@ const PROJECTS = [
     text: "A full website for a cafe/restaurant client covering menu browsing, table booking and online ordering, built to be fast and easy to manage.",
     tech: ["React", "Node.js", "MongoDB"],
     accent: "#A94A3F",
-    image: "src\\sample-website-ss\\cafe and restru.png",
+    image: cafeScreenshot,
   },
   {
     tag: "E-commerce",
@@ -19,7 +20,7 @@ const PROJECTS = [
     text: "A complete e-commerce site with product catalog, cart, checkout and an admin dashboard for managing orders and inventory.",
     tech: ["React", "Node.js", "Express", "MongoDB"],
     accent: "#5B1118",
-    image: "src\\sample-website-ss\\realestate.png",
+    image: realEstateStoreScreenshot,
   },
   {
     tag: "Real Estate",
@@ -27,7 +28,7 @@ const PROJECTS = [
     text: "A property listing platform with search & filters, listing details, and a backend for agents to add and manage properties.",
     tech: ["React", "Python", "PostgreSQL"],
     accent: "#741C24",
-    image: "src\\sample-website-ss\\real estate.png",
+    image: realEstateScreenshot,
   },
 ];
 
