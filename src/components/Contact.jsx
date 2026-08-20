@@ -1,7 +1,7 @@
 import Reveal from "./Reveal.jsx";
 
 // TODO: replace these with your real details.
-const EMAIL = "jsstechnology@protobmail.com";
+const EMAIL = "info@jsstechnology.in";
 const PHONE_DISPLAY = "+91 9382179280";
 const PHONE_TEL = "+91 9382179280";
 const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSe1B79kF3AxFNPypvnwj8PQ3BwENb4YAIQyuuZr6UrXcRqJLg/viewform?usp=publish-editor";

@@ -24,7 +24,7 @@ export default function Navbar() {
       <div className="container nav-inner">
         <a href="#top" className="brand">
           <span className="brand-mark">JSS</span>
-          <span className="brand-full">TECHNOLOGIES</span>
+          <span className="brand-full">TECHNOLOGY</span>
         </a>
 
         <nav className="nav-links">

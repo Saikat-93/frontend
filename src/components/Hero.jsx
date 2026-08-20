@@ -16,7 +16,7 @@ export default function Hero() {
       <div className="container hero-grid">
         <div className="hero-copy">
           <Reveal as="p" className="eyebrow">
-            JSS Technologies · Digital Product Engineering
+            JSS Technology · Digital Product Engineering
           </Reveal>
 
           <h1 className="hero-h1">
