@@ -25,8 +25,10 @@ export default function Navbar() {
       <div className="container nav-inner">
         <a href="#top" className="brand">
           <img src={jssMark} alt="JSS Technology" className="brand-logo" />
-          <span className="brand-mark">JSS</span>
-          <span className="brand-full">TECHNOLOGY</span>
+          <span className="brand-name" aria-hidden="true">
+            <span className="brand-name-jss">JSS</span>
+            <span className="brand-name-tech">TECHNOLOGY</span>
+          </span>
         </a>
 
         <nav className="nav-links">
@@ -92,10 +94,11 @@ export default function Navbar() {
         }
         .brand {
           display: flex;
-          align-items: baseline;
-          gap: 10px;
+          align-items: center;
+          gap: 9px;
           text-decoration: none;
           margin-right: auto;
+          white-space: nowrap;
         }
         .brand-logo {
           width: 42px;
@@ -103,13 +106,21 @@ export default function Navbar() {
           object-fit: contain;
           flex: none;
         }
-        .brand-full {
+        .brand-name {
           font-family: var(--font-body);
-          font-weight: 600;
-          font-size: 12px;
-          letter-spacing: 0.14em;
+          font-weight: 800;
+          font-size: 17px;
+          letter-spacing: 0.01em;
           line-height: 1;
-          color: var(--ink);
+        }
+        .brand-name-jss {
+          color: #172334;
+        }
+        .brand-name-tech {
+          background: linear-gradient(100deg, #4320B7 0%, #7B1FA2 30%, #E62D42 62%, #FF8A00 100%);
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
         }
         .nav-links {
           display: flex;
@@ -177,8 +188,8 @@ export default function Navbar() {
           .brand {
             gap: 8px;
           }
-          .brand-full {
-            font-size: 10px;
+          .brand-name {
+            font-size: 14px;
             letter-spacing: 0.11em;
           }
         }
