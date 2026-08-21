@@ -1,3 +1,5 @@
+import jssMark from "../logo/jss-technology-mark.svg";
+
 const EMAIL = "info@jsstechnology.in";
 
 export default function Footer() {
@@ -6,10 +8,13 @@ export default function Footer() {
       <div className="container footer-grid">
         <div className="footer-brand">
           <span className="brand-mini">
-            <span className="brand-mark">JSS</span>
-            <span className="brand-full">TECHNOLOGY</span>
+            <img src={jssMark} alt="JSS Technology" className="brand-logo" />
+            <span className="brand-name" aria-hidden="true">
+              <span className="brand-name-jss">JSS </span>
+              <span className="brand-name-tech">TECHNOLOGY</span>
+            </span>
           </span>
-          <p>Full-stack software development for education and business.</p>
+          <p>Redefining Your Digital Ceiling.</p>
         </div>
 
         <div className="footer-col">
@@ -59,19 +64,31 @@ export default function Footer() {
         }
         .brand-mini {
           display: flex;
-          align-items: baseline;
-          gap: 8px;
+          align-items: center;
+          gap: 9px;
+          white-space: nowrap;
         }
-        .brand-mark {
-          font-family: var(--font-display);
-          font-size: 22px;
-          color: var(--maroon);
+        .brand-logo {
+          width: 42px;
+          height: 42px;
+          object-fit: contain;
+          flex: none;
         }
-        .brand-full {
-          font-weight: 600;
-          font-size: 10.5px;
-          letter-spacing: 0.14em;
-          color: var(--ink);
+        .brand-name {
+          font-family: var(--font-body);
+          font-weight: 800;
+          font-size: 17px;
+          letter-spacing: 0.01em;
+          line-height: 1;
+        }
+        .brand-name-jss {
+          color: #172334;
+        }
+        .brand-name-tech {
+          background: linear-gradient(100deg, #4320B7 0%, #7B1FA2 30%, #E62D42 62%, #FF8A00 100%);
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
         }
         .footer-col {
           display: flex;
