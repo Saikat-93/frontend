@@ -12,8 +12,19 @@ import Principles from "./components/Principles.jsx";
 import Contact from "./components/Contact.jsx";
 import FinalCTA from "./components/FinalCTA.jsx";
 import Footer from "./components/Footer.jsx";
+import PrivacyPolicy from "./components/PrivacyPolicy.jsx";
 
 export default function App() {
+  if (window.location.pathname === "/privacy-policy") {
+    return (
+      <>
+        <Navbar />
+        <PrivacyPolicy />
+        <Footer />
+      </>
+    );
+  }
+
   return (
     <>
       <Navbar />

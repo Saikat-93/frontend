@@ -13,6 +13,7 @@ const LINKS = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const homeHref = (section) => window.location.pathname === "/privacy-policy" ? `/#${section}` : `#${section}`;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -23,7 +24,7 @@ export default function Navbar() {
   return (
     <header className={`nav ${scrolled ? "nav-scrolled" : ""}`}>
       <div className="container nav-inner">
-        <a href="#top" className="brand">
+        <a href={window.location.pathname === "/privacy-policy" ? "/" : "#top"} className="brand">
           <img src={jssMark} alt="JSS Technology" className="brand-logo" />
           <span className="brand-name" aria-hidden="true">
             <span className="brand-name-jss">JSS  </span>
@@ -33,13 +34,13 @@ export default function Navbar() {
 
         <nav className="nav-links">
           {LINKS.map((l) => (
-            <a key={l.href} href={l.href}>
+            <a key={l.href} href={homeHref(l.href.slice(1))}>
               {l.label}
             </a>
           ))}
         </nav>
 
-        <a href="#contact" className="btn btn-primary nav-cta">
+        <a href={homeHref("contact")} className="btn btn-primary nav-cta">
           Start a project
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
             <path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -60,11 +61,11 @@ export default function Navbar() {
       {open && (
         <div className="nav-mobile">
           {LINKS.map((l) => (
-            <a key={l.href} href={l.href} onClick={() => setOpen(false)}>
+            <a key={l.href} href={homeHref(l.href.slice(1))} onClick={() => setOpen(false)}>
               {l.label}
             </a>
           ))}
-          <a href="#contact" className="btn btn-primary" onClick={() => setOpen(false)}>
+          <a href={homeHref("contact")} className="btn btn-primary" onClick={() => setOpen(false)}>
             Start a project
           </a>
         </div>

@@ -1,9 +1,11 @@
 import jssMark from "../logo/jss-technology-mark.svg";
 
 const EMAIL = "info@jsstechnology.in";
-const WEBSITE = "https://www.jsstechnology.com";
+const WEBSITE = "https://www.jsstechnology.in";
 
 export default function Footer() {
+  const homeHref = (section) => window.location.pathname === "/privacy-policy" ? `/#${section}` : `#${section}`;
+
   return (
     <footer>
       <div className="container footer-grid">
@@ -27,20 +29,20 @@ export default function Footer() {
 
         <div className="footer-col">
           <h4>Company</h4>
-          <a href="#work">Work</a>
-          <a href="#services">Services</a>
-          <a href="#process">Process</a>
-          <a href="#stack">Technology</a>
-          <a href="#team">About</a>
-          <a href="#contact">Contact</a>
+          <a href={homeHref("work")}>Work</a>
+          <a href={homeHref("services")}>Services</a>
+          <a href={homeHref("process")}>Process</a>
+          <a href={homeHref("stack")}>Technology</a>
+          <a href={homeHref("team")}>About</a>
+          <a href={homeHref("contact")}>Contact</a>
         </div>
 
         <div className="footer-col">
           <h4>Services</h4>
-          <a href="#services">Web Development</a>
-          <a href="#services">E-commerce</a>
-          <a href="#services">Education Platforms</a>
-          <a href="#services">Business Software</a>
+          <a href={homeHref("services")}>Web Development</a>
+          <a href={homeHref("services")}>E-commerce</a>
+          <a href={homeHref("services")}>Education Platforms</a>
+          <a href={homeHref("services")}>Business Software</a>
         </div>
 
         <div className="footer-col">
@@ -57,7 +59,7 @@ export default function Footer() {
               <path d="M10 13.5a4 4 0 0 0 5.7.1l2-2a4 4 0 0 0-5.7-5.7l-1.1 1.1" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
               <path d="M14 10.5a4 4 0 0 0-5.7-.1l-2 2A4 4 0 0 0 12 18.1l1.1-1.1" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
             </svg>
-            www.jsstechnology.com
+            www.jsstechnology.in
           </a>
         </div>
       </div>
