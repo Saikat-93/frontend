@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import jssMark from "../logo/jss-technology-mark.svg";
 
 const LINKS = [
   { href: "#work", label: "Work" },
@@ -23,6 +24,7 @@ export default function Navbar() {
     <header className={`nav ${scrolled ? "nav-scrolled" : ""}`}>
       <div className="container nav-inner">
         <a href="#top" className="brand">
+          <img src={jssMark} alt="JSS Technology" className="brand-logo" />
           <span className="brand-mark">JSS</span>
           <span className="brand-full">TECHNOLOGY</span>
         </a>
@@ -91,22 +93,22 @@ export default function Navbar() {
         .brand {
           display: flex;
           align-items: baseline;
-          gap: 8px;
+          gap: 10px;
           text-decoration: none;
           margin-right: auto;
         }
-        .brand-mark {
-          font-family: var(--font-display);
-          font-weight: 500;
-          font-size: 24px;
-          color: var(--maroon);
-          letter-spacing: 0.01em;
+        .brand-logo {
+          width: 42px;
+          height: 42px;
+          object-fit: contain;
+          flex: none;
         }
         .brand-full {
           font-family: var(--font-body);
           font-weight: 600;
-          font-size: 11px;
-          letter-spacing: 0.16em;
+          font-size: 12px;
+          letter-spacing: 0.14em;
+          line-height: 1;
           color: var(--ink);
         }
         .nav-links {
@@ -165,6 +167,19 @@ export default function Navbar() {
           }
           .nav-mobile .btn {
             align-self: flex-start;
+          }
+        }
+        @media (max-width: 420px) {
+          .brand-logo {
+            width: 36px;
+            height: 36px;
+          }
+          .brand {
+            gap: 8px;
+          }
+          .brand-full {
+            font-size: 10px;
+            letter-spacing: 0.11em;
           }
         }
       `}</style>
