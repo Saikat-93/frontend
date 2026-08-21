@@ -1,180 +1,108 @@
 import Reveal from "./Reveal.jsx";
 
-const TEAM = [
-  {
-    name: "Santunu Batabyal",
-    role: "Senior Full-Stack Developer",
-    years: "8+ yrs experience",
-    bio: "Leads architecture and backend engineering across projects, from database design to deployment.",
-  },
-  {
-    name: "Saikat Samanta",
-    role: "Full-Stack Developer",
-    years: "4 yrs experience",
-    bio: "Builds frontend and backend features end to end, from UI implementation to API integration.",
-  },
-  {
-    name: "Joydeep Chakraborty",
-    role: "Senior Full-Stack Developer",
-    years: "10+ yrs experience",
-    bio: "Experienced in full-stack development, scalable application architecture, and delivering reliable digital products.",
-  },
-];
-
 export default function Team() {
   return (
     <section id="team">
       <div className="container">
-        <div className="section-head about-head">
-          <p className="eyebrow">About Jss Technologies</p>
+        <Reveal className="about-intro">
+          <p className="eyebrow">About JSS Technology</p>
           <h2>
-            Small team.
+            Redefining your
             <br />
-            <em>Serious software.</em>
+            <em>digital ceiling.</em>
           </h2>
-          <p>
-            Jss Technologies is a hands-on software development team
-            focused on turning ideas into reliable digital products —
-            no account managers, no hand-offs, just the people building
-            your platform.
+          <p className="about-lead">
+            At JSS Technology, we empower enterprises to break past traditional
+            operational limits and scale with precision. We are a modern
+            technology solutions provider specializing in cloud infrastructure,
+            custom software engineering, and AI-driven digital transformation.
+            By combining machine learning, automated workflows, and scalable
+            architectures, we help organizations modernize operations, unlock
+            data-driven insights, and achieve sustainable competitive advantage.
           </p>
-        </div>
-
-        <Reveal delay={120}>
-          <div className="team-marquee">
-            <div className="marquee-track">
-              {TEAM.concat([{ spacer: true }])
-                .concat(TEAM)
-                .concat([{ spacer: true }])
-                .map((m, i) =>
-                  m.spacer ? (
-                    <div className="marquee-gap" key={"gap-" + i} />
-                  ) : (
-                    <div className="team-card-wrap" key={i}>
-                      <div className="team-card card">
-                        <div className="team-shine" />
-                        <div className="team-avatar">{m.name.charAt(0)}</div>
-                        <h3>{m.name}</h3>
-                        <span className="team-role">{m.role}</span>
-                        <span className="team-years">{m.years}</span>
-                        <p>{m.bio}</p>
-                      </div>
-                    </div>
-                  )
-                )}
-            </div>
-          </div>
         </Reveal>
+
+        <div className="about-pillars">
+          <Reveal className="about-pillar" delay={100}>
+            <span className="pillar-number">01</span>
+            <h3>Our Core Mission</h3>
+            <p>
+              To engineer robust, adaptable, and client-centric technology
+              solutions that drive business efficiency, foster innovation, and
+              create sustainable competitive advantages for enterprises
+              worldwide.
+            </p>
+          </Reveal>
+
+          <Reveal className="about-pillar" delay={180}>
+            <span className="pillar-number">02</span>
+            <h3>Our Vision</h3>
+            <p>
+              To be a premier digital transformation partner, pushing the
+              boundaries of cloud architecture, software engineering, and data
+              solutions to shape the future of enterprise technology.
+            </p>
+          </Reveal>
+        </div>
       </div>
 
       <style>{`
-        .about-head h2 em {
+        .about-intro {
+          max-width: 930px;
+        }
+        .about-intro h2 {
+          margin-top: 18px;
+          font-size: clamp(42px, 6vw, 72px);
+        }
+        .about-intro h2 em {
           font-style: italic;
           color: var(--maroon);
         }
-        .team-marquee { overflow: hidden; width: 100%; }
-        .marquee-track {
-          display: flex;
+        .about-lead {
+          max-width: 760px;
+          margin-top: 24px;
+          color: var(--muted);
+          font-size: 17px;
+          line-height: 1.7;
+        }
+        .about-pillars {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
           gap: 22px;
-          align-items: stretch;
-          animation: teamScroll 26s linear infinite;
+          margin-top: 72px;
         }
-        .marquee-gap { min-width: 880px; flex: 0 0 auto; }
-
-        .team-card-wrap {
-          min-width: 360px;
-          max-width: 420px;
-          flex: 0 0 auto;
-          perspective: 1000px;
+        .about-pillar {
+          padding: 28px 30px 30px;
+          border-top: 2px solid var(--maroon);
+          background: var(--cream-alt);
         }
-
-        .team-card {
-          position: relative;
-          height: 100%;
-          padding: 22px;
-          border-radius: 10px;
-          background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-          border: 1px solid rgba(255,255,255,0.06);
-          box-shadow: 0 6px 18px rgba(6,8,15,0.12);
-          overflow: hidden;
-          transform-style: preserve-3d;
-          transform: rotateY(-6deg) rotateX(2deg) translateZ(0);
-          transition: transform 320ms cubic-bezier(.2,.9,.2,1), box-shadow 320ms, border-color 320ms;
+        .pillar-number {
+          color: var(--terracotta);
+          font-size: 12px;
+          font-weight: 700;
+          letter-spacing: 0.12em;
         }
-        .team-card:hover {
-          transform: rotateY(0deg) rotateX(0deg) translateZ(24px) translateY(-8px);
-          box-shadow: 0 24px 48px rgba(6,8,15,0.28);
-          border-color: rgba(255,255,255,0.14);
+        .about-pillar h3 {
+          margin-top: 34px;
+          font-size: 26px;
         }
-
-        .team-shine {
-          position: absolute;
-          inset: -50% -50%;
-          background: linear-gradient(115deg, transparent 40%, rgba(255,255,255,0.10) 50%, transparent 60%);
-          transform: translateX(-120%);
-          transition: transform 700ms ease;
-          pointer-events: none;
-        }
-        .team-card:hover .team-shine {
-          transform: translateX(20%);
-        }
-
-        .team-avatar {
-          position: relative;
-          width: 64px;
-          height: 64px;
-          border-radius: 10px;
-          background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
-          color: var(--maroon);
-          font-family: var(--font-display);
-          font-size: 22px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-          transform: translateZ(30px);
-        }
-        .team-card h3 {
-          position: relative;
+        .about-pillar p {
           margin-top: 14px;
-          font-size: 18px;
-          transform: translateZ(24px);
-        }
-        .team-role {
-          position: relative;
-          display: block;
-          margin-top: 6px;
-          color: var(--maroon);
-          font-weight: 600;
-          font-size: 13.5px;
-          transform: translateZ(18px);
-        }
-        .team-years {
-          position: relative;
-          display: block;
-          margin-top: 4px;
           color: var(--muted);
-          font-size: 12.5px;
+          font-size: 15px;
+          line-height: 1.7;
         }
-        .team-card p {
-          position: relative;
-          margin-top: 12px;
-          color: var(--muted);
-          font-size: 14px;
-        }
-
-        @media (max-width: 980px) {
-          .marquee-track { animation-duration: 28s; }
-        }
-        @media (max-width: 720px) {
-          .team-card-wrap { perspective: none; min-width: auto; max-width: 100%; }
-          .marquee-track { gap: 14px; animation-duration: 20s; }
-          .team-card { transform: none !important; }
-        }
-
-        @keyframes teamScroll {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+        @media (max-width: 700px) {
+          .about-pillars {
+            grid-template-columns: 1fr;
+            margin-top: 52px;
+          }
+          .about-pillar {
+            padding: 24px;
+          }
+          .about-pillar h3 {
+            margin-top: 26px;
+          }
         }
       `}</style>
     </section>

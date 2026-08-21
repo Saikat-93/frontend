@@ -26,7 +26,7 @@ export default function Navbar() {
         <a href="#top" className="brand">
           <img src={jssMark} alt="JSS Technology" className="brand-logo" />
           <span className="brand-name" aria-hidden="true">
-            <span className="brand-name-jss">JSS</span>
+            <span className="brand-name-jss">JSS  </span>
             <span className="brand-name-tech">TECHNOLOGY</span>
           </span>
         </a>
