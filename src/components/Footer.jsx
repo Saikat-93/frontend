@@ -1,6 +1,7 @@
 import jssMark from "../logo/jss-technology-mark.svg";
 
 const EMAIL = "info@jsstechnology.in";
+const WEBSITE = "https://www.jsstechnology.com";
 
 export default function Footer() {
   return (
@@ -14,7 +15,14 @@ export default function Footer() {
               <span className="brand-name-tech">TECHNOLOGY</span>
             </span>
           </span>
-          <p>Redefining Your Digital Ceiling.</p>
+          <p className="footer-tagline">
+            <span className="tagline-main">
+              <span>Innovate.</span>{" "}
+              <span className="tagline-automate">Automate.</span>{" "}
+              <span className="tagline-elevate">Elevate.</span>
+            </span>
+            <span className="tagline-sub">Smart Solutions for a Digital Tomorrow</span>
+          </p>
         </div>
 
         <div className="footer-col">
@@ -37,12 +45,26 @@ export default function Footer() {
 
         <div className="footer-col">
           <h4>Contact</h4>
-          <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+          <a className="footer-contact-link" href={`mailto:${EMAIL}`}>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="1.8" />
+              <path d="m4 7 8 6 8-6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            {EMAIL}
+          </a>
+          <a className="footer-contact-link" href={WEBSITE} target="_blank" rel="noopener noreferrer">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M10 13.5a4 4 0 0 0 5.7.1l2-2a4 4 0 0 0-5.7-5.7l-1.1 1.1" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+              <path d="M14 10.5a4 4 0 0 0-5.7-.1l-2 2A4 4 0 0 0 12 18.1l1.1-1.1" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+            </svg>
+            www.jsstechnology.com
+          </a>
         </div>
       </div>
 
       <div className="container footer-bottom">
         <span className="footer-copy">© {new Date().getFullYear()} Jss Technology. All rights reserved.</span>
+        <a className="privacy-link" href="/privacy-policy">Privacy Policy</a>
       </div>
 
       <style>{`
@@ -61,6 +83,33 @@ export default function Footer() {
           color: var(--muted);
           font-size: 14px;
           max-width: 30ch;
+        }
+        .footer-tagline {
+          display: flex;
+          flex-direction: column;
+          gap: 7px;
+          max-width: 34ch;
+        }
+        .tagline-main {
+          color: #172334;
+          font-size: 17px;
+          font-weight: 700;
+          line-height: 1.25;
+          white-space: nowrap;
+        }
+        .tagline-automate {
+          color: #6B27C7;
+        }
+        .tagline-elevate {
+          background: linear-gradient(100deg, #D72B58, #FF7A00);
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+        }
+        .tagline-sub {
+          color: #172334;
+          font-size: 13px;
+          line-height: 1.4;
         }
         .brand-mini {
           display: flex;
@@ -112,14 +161,36 @@ export default function Footer() {
         .footer-col a:hover {
           color: var(--maroon);
         }
+        .footer-contact-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 9px;
+        }
+        .footer-contact-link svg {
+          color: var(--maroon);
+          flex: none;
+        }
         .footer-bottom {
           margin-top: 56px;
           padding: 28px 32px;
           border-top: 1px solid var(--line);
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 20px;
         }
         .footer-copy {
           color: var(--muted);
           font-size: 13px;
+        }
+        .privacy-link {
+          color: var(--muted);
+          font-size: 13px;
+          text-decoration: none;
+          transition: color 0.2s ease;
+        }
+        .privacy-link:hover {
+          color: var(--maroon);
         }
         @media (max-width: 780px) {
           .footer-grid {
@@ -130,6 +201,11 @@ export default function Footer() {
         @media (max-width: 480px) {
           .footer-grid {
             grid-template-columns: 1fr;
+          }
+          .footer-bottom {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 8px;
           }
         }
       `}</style>

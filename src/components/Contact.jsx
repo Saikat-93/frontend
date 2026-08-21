@@ -4,7 +4,7 @@ import Reveal from "./Reveal.jsx";
 const EMAIL = "info@jsstechnology.in";
 const PHONE_DISPLAY = "+91 9382179280";
 const PHONE_TEL = "+91 9382179280";
-const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSe1B79kF3AxFNPypvnwj8PQ3BwENb4YAIQyuuZr6UrXcRqJLg/viewform?usp=publish-editor";
+const GOOGLE_FORM_URL = "https://forms.gle/he8sikNnGK5qpDti8";
 
 export default function Contact() {
   return (
@@ -21,7 +21,13 @@ export default function Contact() {
           <div className="contact-links">
             <a href={`mailto:${EMAIL}`} className="contact-link">
               <span className="contact-link-label">Email</span>
-              <span className="contact-link-value">{EMAIL}</span>
+              <span className="contact-link-value">
+                <svg className="contact-mail-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="1.8" />
+                  <path d="m4 7 8 6 8-6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                {EMAIL}
+              </span>
             </a>
             <a href={`tel:${PHONE_TEL}`} className="contact-link">
               <span className="contact-link-label">Phone</span>
@@ -91,6 +97,13 @@ export default function Contact() {
         .contact-link-value {
           font-family: var(--font-display);
           font-size: 21px;
+          display: inline-flex;
+          align-items: center;
+          gap: 9px;
+        }
+        .contact-mail-icon {
+          color: var(--maroon);
+          flex: none;
         }
         .contact-cta {
           padding: 40px;
